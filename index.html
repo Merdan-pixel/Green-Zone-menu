@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GreenZone Menu</title>
+<link rel="icon" href="assets/logo.png">
+<style>
+:root{--green:#2E6E3E;--text:#222;--muted:#6b7280;--bg:#ffffff;}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.header{padding:24px 16px 8px;text-align:center}
+.header img{width:96px;height:96px;border-radius:50%;object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.brand{font-weight:700;letter-spacing:.06em;color:var(--green);margin-top:8px}
+.nav{position:sticky;top:0;background:#fff;padding:10px 12px;display:flex;gap:8px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,.05);z-index:3}
+.btn{border:1px solid var(--green);color:#fff;background:var(--green);padding:8px 12px;border-radius:999px;font-weight:600;font-size:14px}
+.btn.outline{background:#fff;color:var(--green)}
+.container{max-width:900px;margin:0 auto;padding:16px}
+.section-title{color:var(--green);font-size:24px;margin:24px 8px 12px}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);padding:14px 16px;margin:10px 8px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.item-name{font-weight:700;font-size:17px}
+.item-desc{color:var(--muted);font-size:14px;margin-top:3px}
+.item-price{white-space:nowrap;font-weight:700;color:var(--green)}
+.search{position:sticky;top:56px;background:#fff;z-index:2;padding:10px 12px;border-bottom:1px solid #eee}
+.search input{width:100%;padding:12px 14px;border:1px solid #e5e7eb;border-radius:12px;font-size:15px}
+.footer{padding:40px 16px;text-align:center;color:var(--muted);font-size:13px}
+.anchor{position:relative;top:-70px;visibility:hidden}
+</style>
+</head>
+<body>
+  <div class="header">
+    <img src="assets/logo.png" alt="GreenZone logo">
+    <div class="brand">GREENZONE</div>
+  </div>
+
+  <div class="nav">
+    <button class="btn btn-cat" data-target="БЛЮДА НА УГЛЯХ">Блюда на углях</button>
+    <button class="btn btn-cat" data-target="Горячие Блюда">Горячие блюда</button>
+    <button class="btn btn-cat" data-target="Завтраки">Завтраки</button>
+    <button class="btn btn-cat" data-target="Закуски">Закуски</button>
+    <button class="btn btn-cat" data-target="МАНГАЛ">Мангал</button>
+    <button class="btn btn-cat" data-target="Пасты">Пасты</button>
+    <button class="btn btn-cat" data-target="Пицца">Пицца</button>
+    <button class="btn btn-cat" data-target="Роллы Запеченные">Роллы запечённые</button>
+    <button class="btn btn-cat" data-target="Роллы Классические">Роллы классические</button>
+    <button class="btn btn-cat" data-target="Роллы Сеты">Ролл-сеты</button>
+    <button class="btn btn-cat" data-target="Салаты">Салаты</button>
+    <button class="btn btn-cat" data-target="Супы">Супы</button>
+    <button class="btn btn-cat" data-target="Фаст Фуд Бургеры">Бургеры</button>
+    <button class="btn btn-cat" data-target="Фаст Фуд Сэндвичи">Сэндвичи</button>
+  </div>
+
+  <div class="search">
+    <input id="search" type="search" placeholder="Поиск по блюдам и ингредиентам...">
+  </div>
+
+  <div class="container">
+
+    <!-- БЛЮДА НА УГЛЯХ -->
+    <div class="anchor" id="БЛЮДА НА УГЛЯХ"></div>
+    <h2 class="section-title">БЛЮДА НА УГЛЯХ</h2>
+
+    <div class="card" data-text="стейк брискет салат криспи картофель по-деревенски корнишоны соус демиглас">
+      <div>
+        <div class="item-name">Стейк брискет</div>
+        <div class="item-desc">мраморная говядина на углях, салат криспи, картофель по-деревенски, корнишоны, соус демиглас</div>
+      </div>
+      <div class="item-price">100 м</div>
+    </div>
+
+    <div class="card" data-text="томлёное говяжье ребро картофель по-деревенски салат криспи соус демиглас">
+      <div>
+        <div class="item-name">Томлёное говяжье ребро</div>
+        <div class="item-desc">длительно томлёная говядина, картофель по-деревенски, салат криспи, соус демиглас</div>
+      </div>
+      <div class="item-price">95 м</div>
+    </div>
+
+    <div class="card" data-text="куриное бедро на углях картофель по-деревенски салат криспи соус тартар">
+      <div>
+        <div class="item-name">Куриное бедро на углях</div>
+        <div class="item-desc">куриное бедро-гриль, картофель по-деревенски, салат криспи, соус тартар</div>
+      </div>
+      <div class="item-price">70 м</div>
+    </div>
+
+    <div class="card" data-text="баварские сосиски гриль картофель по-деревенски салат криспи соус демиглас">
+      <div>
+        <div class="item-name">Баварские сосиски на гриле</div>
+        <div class="item-desc">сочные сосиски-гриль, картофель по-деревенски, салат криспи, соус демиглас</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="говяжий язык томлёный картофель по-деревенски салат криспи соус демиглас">
+      <div>
+        <div class="item-name">Говяжий язык на гриле</div>
+        <div class="item-desc">томлёный говяжий язык, картофель по-деревенски, салат криспи, соус демиглас</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <!-- ГОРЯЧИЕ БЛЮДА -->
+    <div class="anchor" id="Горячие Блюда"></div>
+    <h2 class="section-title">ГОРЯЧИЕ БЛЮДА</h2>
+
+    <div class="card" data-text="медальоны бон-филе кабачки картофель брокколи томаты черри соус демиглас">
+      <div>
+        <div class="item-name">Медальоны с обжаренными овощами</div>
+        <div class="item-desc">говяжье бон-филе, кабачки, картофель, брокколи, томаты черри, соус демиглас</div>
+      </div>
+      <div class="item-price">160 м</div>
+    </div>
+
+    <div class="card" data-text="шатобриан бон-филе томаты черри соус кимчи демиглас барбекю">
+      <div>
+        <div class="item-name">Шатобриан с тремя соусами</div>
+        <div class="item-desc">нежное бон-филе и три соуса: кимчи, демиглас и барбекю</div>
+      </div>
+      <div class="item-price">150 м</div>
+    </div>
+
+    <div class="card" data-text="мясо по-тайски бон-филе древесные грибы паприка томаты фунчоза">
+      <div>
+        <div class="item-name">Мясо по-тайски</div>
+        <div class="item-desc">говяжье бон-филе, древесные грибы, три вида паприки, томаты, фунчоза</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="куриная грудка картофель сыр сливочный соус">
+      <div>
+        <div class="item-name">Куриная грудка с запечённой картошкой</div>
+        <div class="item-desc">куриная грудка, запечённый картофель, сыр, сливочный соус</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="филе лосося стейк кабачки томаты">
+      <div>
+        <div class="item-name">Филе лосося</div>
+        <div class="item-desc">стейк из лосося, кабачки, томаты</div>
+      </div>
+      <div class="item-price">180 м</div>
+    </div>
+
+    <div class="card" data-text="судак соус из мидий морковь кабачки сливки">
+      <div>
+        <div class="item-name">Судак с соусом из мидий</div>
+        <div class="item-desc">филе судака, морковь и кабачки, сливочный соус с мидиями</div>
+      </div>
+      <div class="item-price">120 м</div>
+    </div>
+
+    <div class="card" data-text="гордон блю куриная грудка два вида сыра куриный бекон">
+      <div>
+        <div class="item-name">Гордон блю</div>
+        <div class="item-desc">куриная грудка, два вида сыра, куриный бекон</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <!-- ЗАВТРАКИ -->
+    <div class="anchor" id="Завтраки"></div>
+    <h2 class="section-title">ЗАВТРАКИ</h2>
+
+    <div class="card" data-text="менемен взбитая фета оливки яйцо паприка лук томаты томатный соус">
+      <div>
+        <div class="item-name">Менемен с взбитой фетой и оливками</div>
+        <div class="item-desc">яйца, паприка, лук, томаты и томатный соус, взбитая фета, маслины</div>
+      </div>
+      <div class="item-price">40 м</div>
+    </div>
+
+    <div class="card" data-text="турецкий завтрак яйцо суджук овощи сыры чиабатта мёд джем">
+      <div>
+        <div class="item-name">Турецкий завтрак</div>
+        <div class="item-desc">яйца и суджук, овощи, ассорти сыров, оливки, чиабатта, мёд и клубничный джем</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="французский омлет авокадо пармезан сливки салат криспи">
+      <div>
+        <div class="item-name">Французский омлет с авокадо</div>
+        <div class="item-desc">нежный омлет с пармезаном и сливками, авокадо и салат криспи</div>
+      </div>
+      <div class="item-price">65 м</div>
+    </div>
+
+    <div class="card" data-text="итальянский завтрак яйцо пашот вяленое мясо сыры паштет из индейки чиз-крем чиабатта">
+      <div>
+        <div class="item-name">Итальянский завтрак</div>
+        <div class="item-desc">яйцо пашот, вяленое мясо, сыры, паштет из индейки, чиз-крем, оливки, чиабатта</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="рисовая каша кокосовое молоко клубника">
+      <div>
+        <div class="item-name">Рисовая каша на кокосовом молоке</div>
+        <div class="item-desc">рис, кокосовое молоко, клубника</div>
+      </div>
+      <div class="item-price">40 м</div>
+    </div>
+
+    <div class="card" data-text="яйца бенедикт лосось шпинат сливки тост голландский соус">
+      <div>
+        <div class="item-name">Бенедикт с лососем</div>
+        <div class="item-desc">шпинат и сливочный соус на тосте, лосось, яйцо, голландский соус</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="брускетта лосось гуакамоле чиз-крем томаты черри яйцо пашот рукола">
+      <div>
+        <div class="item-name">Брускетта с лососем и гуакамоле</div>
+        <div class="item-desc">малосольный лосось, соус гуакамоле, чиз-крем, томаты черри, яйцо пашот и рукола</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="брускетта вяленые томаты вяленое мясо мятная аджика крем-чиз">
+      <div>
+        <div class="item-name">Брускетта с вялеными томатами и мясом</div>
+        <div class="item-desc">чиабатта, вяленое мясо и томаты, мятная аджика, крем-чиз</div>
+      </div>
+      <div class="item-price">45 м</div>
+    </div>
+
+    <div class="card" data-text="завтрак гринзона скрэмбл пармезан моцарелла бейби вяленые томаты груша рукола">
+      <div>
+        <div class="item-name">Завтрак «Гринзона»</div>
+        <div class="item-desc">чиабатта, скрэмбл с пармезаном, моцарелла бейби, вяленые томаты, вяленое мясо, груша, рукола</div>
+      </div>
+      <div class="item-price">65 м</div>
+    </div>
+
+    <div class="card" data-text="каша из пяти злаков молоко">
+      <div>
+        <div class="item-name">Каша из пяти злаков</div>
+        <div class="item-desc">теплая каша из смеси злаков на молоке</div>
+      </div>
+      <div class="item-price">30 м</div>
+    </div>
+
+    <!-- ЗАКУСКИ -->
+    <div class="anchor" id="Закуски"></div>
+    <h2 class="section-title">ЗАКУСКИ</h2>
+
+    <div class="card" data-text="фруктовое ассорти сезонные фрукты">
+      <div>
+        <div class="item-name">Фруктовое ассорти</div>
+        <div class="item-desc">сезонные фрукты и ягоды</div>
+      </div>
+      <div class="item-price">180 м</div>
+    </div>
+
+    <div class="card" data-text="канапе селёдка бородинский хлеб картофель корнишоны соус из тунца">
+      <div>
+        <div class="item-name">Канапе из селёдки</div>
+        <div class="item-desc">бородинский хлеб, сельдь, картофель, корнишоны, соус из тунца</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+    <div class="card" data-text="брускетта микс икра черная и красная тунец шпроты лосось">
+      <div>
+        <div class="item-name">Брускетта микс</div>
+        <div class="item-desc">чёрная и красная икра, тунец, шпроты, лосось</div>
+      </div>
+      <div class="item-price">100 м</div>
+    </div>
+
+    <div class="card" data-text="овощное ассорти свежие овощи зелень">
+      <div>
+        <div class="item-name">Овощное ассорти</div>
+        <div class="item-desc">свежие овощи и зелень</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+    <div class="card" data-text="тар-тар из сёмги авокадо чесночные гренки чёрная икра">
+      <div>
+        <div class="item-name">Тар-тар из сёмги</div>
+        <div class="item-desc">сёмга, пюре из авокадо, чесночные гренки, чёрная икра</div>
+      </div>
+      <div class="item-price">180 м</div>
+    </div>
+
+    <!-- МАНГАЛ -->
+    <div class="anchor" id="МАНГАЛ"></div>
+    <h2 class="section-title">МАНГАЛ</h2>
+
+    <div class="card" data-text="люля кебаб говядина лаваш зелень лук соус">
+      <div>
+        <div class="item-name">Люля из говядины</div>
+        <div class="item-desc">люля-кебаб из говядины, лаваш, лук, зелень, соус</div>
+      </div>
+      <div class="item-price">50 м</div>
+    </div>
+
+    <div class="card" data-text="люля кебаб курица лаваш зелень лук соус">
+      <div>
+        <div class="item-name">Люля из курицы</div>
+        <div class="item-desc">люля-кебаб из курицы, лаваш, лук, зелень, соус</div>
+      </div>
+      <div class="item-price">45 м</div>
+    </div>
+
+    <div class="card" data-text="пирзола баранина на косточке">
+      <div>
+        <div class="item-name">Пирзола</div>
+        <div class="item-desc">баранина на косточке, жаренная на углях</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="beef roll рулет из говядины гриль">
+      <div>
+        <div class="item-name">Beef Roll</div>
+        <div class="item-desc">рулет из говядины на гриле</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="печень в жиру баранячий курдюк лук зелень">
+      <div>
+        <div class="item-name">Печень в жиру</div>
+        <div class="item-desc">печень, запечённая в курдючном жире, лук и зелень</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+    <div class="card" data-text="цыплёнок на мангале">
+      <div>
+        <div class="item-name">Цыплёнок на мангале</div>
+        <div class="item-desc">курица, приготовленная на углях, с соусом и зеленью</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="перепёлка на мангале">
+      <div>
+        <div class="item-name">Перепёлка на мангале</div>
+        <div class="item-desc">перепёлка-гриль с ароматными специями</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="бараньи рёбра на углях">
+      <div>
+        <div class="item-name">Бараньи рёбра</div>
+        <div class="item-desc">рёбра ягнёнка на углях</div>
+      </div>
+      <div class="item-price">75 м</div>
+    </div>
+
+    <div class="card" data-text="куриный шашлык маринад лаваш соус">
+      <div>
+        <div class="item-name">Куриный шашлык</div>
+        <div class="item-desc">маринованное куриное филе на шампуре, лаваш и соус</div>
+      </div>
+      <div class="item-price">50 м</div>
+    </div>
+
+    <div class="card" data-text="куриные крылышки гриль соус">
+      <div>
+        <div class="item-name">Куриные крылышки</div>
+        <div class="item-desc">крылышки-гриль с фирменным соусом</div>
+      </div>
+      <div class="item-price">65 м</div>
+    </div>
+
+    <div class="card" data-text="баранина шашлык">
+      <div>
+        <div class="item-name">Баранина</div>
+        <div class="item-desc">шашлык из молодой баранины</div>
+      </div>
+      <div class="item-price">75 м</div>
+    </div>
+
+    <div class="card" data-text="поднос мангал ассорти">
+      <div>
+        <div class="item-name">Поднос «Мангал»</div>
+        <div class="item-desc">большое ассорти мясов с мангала</div>
+      </div>
+      <div class="item-price">700 м</div>
+    </div>
+
+    <!-- ПАСТЫ -->
+    <div class="anchor" id="Пасты"></div>
+    <h2 class="section-title">ПАСТЫ</h2>
+
+    <div class="card" data-text="аррабиата пенне креветки томатный соус пармезан">
+      <div>
+        <div class="item-name">Аррабиата пенне с креветками</div>
+        <div class="item-desc">пенне, креветки, томатный соус, пармезан</div>
+      </div>
+      <div class="item-price">120 м</div>
+    </div>
+
+    <div class="card" data-text="лингвини карбонара бекон сливки пармезан">
+      <div>
+        <div class="item-name">Лингвини карбонара</div>
+        <div class="item-desc">лингвини, говяжий бекон, сливки, пармезан</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="паста болоньезе спагетти соус болоньезе пармезан">
+      <div>
+        <div class="item-name">Паста болоньезе</div>
+        <div class="item-desc">спагетти с соусом болоньезе и пармезаном</div>
+      </div>
+      <div class="item-price">70 м</div>
+    </div>
+
+    <div class="card" data-text="удон тайский бон-филе паприка помидор три соуса">
+      <div>
+        <div class="item-name">Удон в тайском стиле</div>
+        <div class="item-desc">лапша удон, бон-филе, три вида паприки, помидор, набор соусов</div>
+      </div>
+      <div class="item-price">65 м</div>
+    </div>
+
+    <div class="card" data-text="фетучини курица шампиньоны сливки яйцо пармезан">
+      <div>
+        <div class="item-name">Фетучини с курицей</div>
+        <div class="item-desc">фетучини, куриная грудка, шампиньоны, сливки, яйцо, пармезан</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <!-- ПИЦЦА -->
+    <div class="anchor" id="Пицца"></div>
+    <h2 class="section-title">ПИЦЦА</h2>
+
+    <div class="card" data-text="пицца ассорти">
+      <div>
+        <div class="item-name">Пицца «Ассорти»</div>
+        <div class="item-desc">набор популярных начинок</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="пицца фермерская">
+      <div>
+        <div class="item-name">Пицца «Фермерская»</div>
+        <div class="item-desc">сытная пицца с свежими овощами и мясом</div>
+      </div>
+      <div class="item-price">110 м</div>
+    </div>
+
+    <div class="card" data-text="пицца пепперони">
+      <div>
+        <div class="item-name">Пицца «Пепперони»</div>
+        <div class="item-desc">классика с пикантной колбасой</div>
+      </div>
+      <div class="item-price">70 м</div>
+    </div>
+
+    <div class="card" data-text="пицца маргарита">
+      <div>
+        <div class="item-name">Пицца «Маргарита»</div>
+        <div class="item-desc">томатный соус, моцарелла и базилик</div>
+      </div>
+      <div class="item-price">70 м</div>
+    </div>
+
+    <div class="card" data-text="пицца с грибами">
+      <div>
+        <div class="item-name">Пицца с грибами</div>
+        <div class="item-desc">щедрая начинка из шампиньонов</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="пицца куриная">
+      <div>
+        <div class="item-name">Пицца «Куриная»</div>
+        <div class="item-desc">нежная курица, сыр, травы</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <!-- РОЛЛЫ ЗАПЕЧЁННЫЕ -->
+    <div class="anchor" id="Роллы Запеченные"></div>
+    <h2 class="section-title">РОЛЛЫ ЗАПЕЧЁННЫЕ</h2>
+
+    <div class="card" data-text="запечённый ролл краб">
+      <div>
+        <div class="item-name">Запечённый с крабом</div>
+        <div class="item-desc">горячий ролл с нежным крабом</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="запечённый ролл курица">
+      <div>
+        <div class="item-name">Запечённый с курицей</div>
+        <div class="item-desc">сытный горячий ролл с курицей</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="запечённый ролл креветка">
+      <div>
+        <div class="item-name">Запечённый с креветкой</div>
+        <div class="item-desc">горячий ролл с креветкой</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="запечённый ролл мидии">
+      <div>
+        <div class="item-name">Запечённый с мидиями</div>
+        <div class="item-desc">горячий ролл с мидиями</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="запечённый ролл угорь">
+      <div>
+        <div class="item-name">Запечённый с угрём</div>
+        <div class="item-desc">горячий ролл с угрём</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="запечённый ролл лосось">
+      <div>
+        <div class="item-name">Запечённый с лососем</div>
+        <div class="item-desc">горячий ролл с лососем</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="эби чиз креветка сыр">
+      <div>
+        <div class="item-name">Эби-чиз с креветкой</div>
+        <div class="item-desc">креветка и сливочный сыр, запечённые до румяной корочки</div>
+      </div>
+      <div class="item-price">120 м</div>
+    </div>
+
+    <!-- РОЛЛЫ КЛАССИЧЕСКИЕ -->
+    <div class="anchor" id="Роллы Классические"></div>
+    <h2 class="section-title">РОЛЛЫ КЛАССИЧЕСКИЕ</h2>
+
+    <div class="card" data-text="сяке маки нори лосось рис">
+      <div>
+        <div class="item-name">Сякэ-маки</div>
+        <div class="item-desc">нори, лосось, рис</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="эби маки нори креветка рис">
+      <div>
+        <div class="item-name">Эби-маки</div>
+        <div class="item-desc">нори, креветка, рис</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="унаги маки нори угорь рис">
+      <div>
+        <div class="item-name">Унаги-маки</div>
+        <div class="item-desc">нори, угорь, рис</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="калифорния лосось крем чиз масаго нори">
+      <div>
+        <div class="item-name">Калифорния с лососем</div>
+        <div class="item-desc">лосось, крем-чиз, рис, масаго, нори</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="калифорния краб крем чиз масаго нори">
+      <div>
+        <div class="item-name">Калифорния с крабом</div>
+        <div class="item-desc">краб, крем-чиз, рис, масаго, нори</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="калифорния креветка крем чиз масаго нори">
+      <div>
+        <div class="item-name">Калифорния с креветкой</div>
+        <div class="item-desc">креветка, крем-чиз, рис, масаго, нори</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="филадельфия лосось крем чиз огурец нори">
+      <div>
+        <div class="item-name">Филадельфия</div>
+        <div class="item-desc">лосось, крем-чиз, свежий огурец, рис, нори</div>
+      </div>
+      <div class="item-price">110 м</div>
+    </div>
+
+    <div class="card" data-text="филадельфия абсолют лосось краб крем чиз огурец нори">
+      <div>
+        <div class="item-name">Филадельфия «Абсолют»</div>
+        <div class="item-desc">лосось, краб, крем-чиз, огурец, рис, нори</div>
+      </div>
+      <div class="item-price">110 м</div>
+    </div>
+
+    <div class="card" data-text="жареный ролл гринзон лосось два вида сыра огурец нори">
+      <div>
+        <div class="item-name">Жареный ролл «Гринзон»</div>
+        <div class="item-desc">лосось, два вида сыра, огурец, рис и нори — в хрустящей панировке</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <!-- СЕТЫ -->
+    <div class="anchor" id="Роллы Сеты"></div>
+    <h2 class="section-title">РОЛЛ-СЕТЫ</h2>
+
+    <div class="card" data-text="сет классика калифорния краб лосось креветка угорь">
+      <div>
+        <div class="item-name">Сет «Классика»</div>
+        <div class="item-desc">Калифорния с крабом, лососем, креветкой и угрём</div>
+      </div>
+      <div class="item-price">300 м</div>
+    </div>
+
+    <div class="card" data-text="сет запечённый лосось угорь краб курица">
+      <div>
+        <div class="item-name">Сет «Запечённый»</div>
+        <div class="item-desc">запечённые роллы: с лососем, угрём, крабом и курицей</div>
+      </div>
+      <div class="item-price">275 м</div>
+    </div>
+
+    <!-- САЛАТЫ -->
+    <div class="anchor" id="Салаты"></div>
+    <h2 class="section-title">САЛАТЫ</h2>
+
+    <div class="card" data-text="тайский салат бон-филе фунчоза паприка корнишоны соевый соус томаты зелень">
+      <div>
+        <div class="item-name">Тайский салат с фунчозой</div>
+        <div class="item-desc">бон-филе, фунчоза, три вида паприки, корнишоны, соевый соус, томаты и микс зелени</div>
+      </div>
+      <div class="item-price">70 м</div>
+    </div>
+
+    <div class="card" data-text="мясной салат по-тайски стейк бон-филе авокадо паприка тайский соус томаты черри листья">
+      <div>
+        <div class="item-name">Мясной салат по-тайски</div>
+        <div class="item-desc">стейк из бон-филе, авокадо, три вида паприки, тайский соус, томаты черри, листья салата</div>
+      </div>
+      <div class="item-price">—</div>
+    </div>
+
+    <div class="card" data-text="цезарь с курицей листья салата соус из тунца томаты черри перепелиные яйца крутоны">
+      <div>
+        <div class="item-name">Цезарь с курицей</div>
+        <div class="item-desc">куриная грудка, листья салата, соус из тунца, томаты черри, перепелиные яйца и крутоны</div>
+      </div>
+      <div class="item-price">65 м</div>
+    </div>
+
+    <div class="card" data-text="цезарь с креветками листья салата соус из тунца томаты черри перепелиные яйца крутоны">
+      <div>
+        <div class="item-name">Цезарь с креветками</div>
+        <div class="item-desc">креветки, листья салата, соус из тунца, томаты черри, перепелиные яйца и крутоны</div>
+      </div>
+      <div class="item-price">120 м</div>
+    </div>
+
+    <div class="card" data-text="греческий салат бальзамический дрессинг фета">
+      <div>
+        <div class="item-name">Греческий с бальзамическим дрессингом</div>
+        <div class="item-desc">томаты, огурец, паприка, бальзамический соус, сыр фета</div>
+      </div>
+      <div class="item-price">50 м</div>
+    </div>
+
+    <div class="card" data-text="салат с морепродуктами осьминог мидии креветки листья лимон лемонграсс чесночное масло соевый соус томаты черри">
+      <div>
+        <div class="item-name">Салат с морепродуктами</div>
+        <div class="item-desc">осьминог, мидии, креветки, свежие листья салата, лемонграсс, чесночное масло, соевый соус, томаты черри</div>
+      </div>
+      <div class="item-price">180 м</div>
+    </div>
+
+    <div class="card" data-text="салат с тунцом и брокколи фасоль картофель дижонский соус яйцо">
+      <div>
+        <div class="item-name">Салат с тунцом и брокколи</div>
+        <div class="item-desc">тунец, листья салата, томаты черри, картофель, фасоль, брокколи, дижонский соус и яйцо</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="битые огурцы спаржа зелень древесные грибы томаты три соуса">
+      <div>
+        <div class="item-name">Салат «Битые огурцы»</div>
+        <div class="item-desc">огурцы, спаржа, микс зелени, древесные грибы, томаты и три вида соуса</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="зелёный салат хрустящие баклажаны чесночный соус">
+      <div>
+        <div class="item-name">Зелёный салат с хрустящими баклажанами</div>
+        <div class="item-desc">обжаренные баклажаны, томаты, микс зелени, чесночный соус</div>
+      </div>
+      <div class="item-price">75 м</div>
+    </div>
+
+    <!-- СУПЫ -->
+    <div class="anchor" id="Супы"></div>
+    <h2 class="section-title">СУПЫ</h2>
+
+    <div class="card" data-text="суп с куриными митболами картофель морковь куриный бульон">
+      <div>
+        <div class="item-name">Суп с куриными митболами</div>
+        <div class="item-desc">митболы из курицы, картофель, морковь, куриный бульон</div>
+      </div>
+      <div class="item-price">45 м</div>
+    </div>
+
+    <div class="card" data-text="мерджимек чечевичный суп морковь томатная паста лук">
+      <div>
+        <div class="item-name">Мерджимек</div>
+        <div class="item-desc">чечевичный суп с морковью, луком и томатной пастой</div>
+      </div>
+      <div class="item-price">30 м</div>
+    </div>
+
+    <div class="card" data-text="суп из говяжьей грудинки картофель морковь говяжий бульон">
+      <div>
+        <div class="item-name">Суп из говяжьей грудинки</div>
+        <div class="item-desc">наваристый бульон, грудинка, картофель и морковь</div>
+      </div>
+      <div class="item-price">45 м</div>
+    </div>
+
+    <div class="card" data-text="грибной крем-суп шампиньоны сливки лук бешамель плавленный сыр крутоны">
+      <div>
+        <div class="item-name">Грибной крем-суп</div>
+        <div class="item-desc">шампиньоны, сливки, луком-бешамель, плавленый сыр и крутоны</div>
+      </div>
+      <div class="item-price">50 м</div>
+    </div>
+
+    <div class="card" data-text="фо бо рисовая лапша паприка куриная грудка том-ям паста яйцо куриный бульон">
+      <div>
+        <div class="item-name">Фо бо</div>
+        <div class="item-desc">рисовая лапша, паприка, куриная грудка, паста том-ям, яйцо, куриный бульон</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="том-ям морепродукты мидии креветки осьминог кальмары кокосовое молоко куриный бульон лемонграсс рис">
+      <div>
+        <div class="item-name">Том-ям с морепродуктами</div>
+        <div class="item-desc">мидии, креветки, осьминог и кальмары в кокосово-остром бульоне с лемонграссом</div>
+      </div>
+      <div class="item-price">160 м</div>
+    </div>
+
+    <div class="card" data-text="унаш">
+      <div>
+        <div class="item-name">Унаш</div>
+        <div class="item-desc">национальный суп-лапша</div>
+      </div>
+      <div class="item-price">35 м</div>
+    </div>
+
+    <!-- БУРГЕРЫ -->
+    <div class="anchor" id="Фаст Фуд Бургеры"></div>
+    <h2 class="section-title">ФАСТ-ФУД · БУРГЕРЫ</h2>
+
+    <div class="card" data-text="чизбургер булочка карамелизированный лук котлета сыр фирменный соус">
+      <div>
+        <div class="item-name">Чизбургер</div>
+        <div class="item-desc">булочка, карамелизированный лук, говяжья котлета, сыр, фирменный соус</div>
+      </div>
+      <div class="item-price">50 м</div>
+    </div>
+
+    <div class="card" data-text="сырный бум котлета говядина котлета моцарелла фирменный соус">
+      <div>
+        <div class="item-name">Сырный бум</div>
+        <div class="item-desc">котлета из говядины и котлета из моцареллы, фирменный соус</div>
+      </div>
+      <div class="item-price">90 м</div>
+    </div>
+
+    <div class="card" data-text="грин бургер брискет листья салата лук фирменный соус">
+      <div>
+        <div class="item-name">Грин-бургер</div>
+        <div class="item-desc">булочка, стейк-брискет, листья салата, лук, фирменный соус</div>
+      </div>
+      <div class="item-price">80 м</div>
+    </div>
+
+    <div class="card" data-text="чикенбургер куриная грудка салат соус">
+      <div>
+        <div class="item-name">Чикенбургер</div>
+        <div class="item-desc">булочка, куриная грудка, листья салата, соус</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+    <div class="card" data-text="картофель фри">
+      <div>
+        <div class="item-name">Картофель фри</div>
+        <div class="item-desc">хрустящий картофель</div>
+      </div>
+      <div class="item-price">25 м</div>
+    </div>
+
+    <div class="card" data-text="куриные наггетсы">
+      <div>
+        <div class="item-name">Куриные наггетсы</div>
+        <div class="item-desc">золотистые кусочки курицы</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+    <div class="card" data-text="сет сытный бум">
+      <div>
+        <div class="item-name">Сет «Сытный бум»</div>
+        <div class="item-desc">ассорти хитов фаст-фуда</div>
+      </div>
+      <div class="item-price">—</div>
+    </div>
+
+    <div class="card" data-text="бургер 4 вида чикенбургер чизбургер сырный бум гринбургер наггетсы сырные шарики фри">
+      <div>
+        <div class="item-name">Бургер «4 вида»</div>
+        <div class="item-desc">чикенбургер, чизбургер, «Сырный бум», «Грин-бургер», наггетсы, сырные шарики и фри</div>
+      </div>
+      <div class="item-price">400 м</div>
+    </div>
+
+    <div class="card" data-text="сет гринзон клаб-сэндвич с курицей сэндвич с брискетом креветки в кляре кальмары в кляре сырные палочки картофель по-деревенски">
+      <div>
+        <div class="item-name">Сет «Гринзон»</div>
+        <div class="item-desc">клаб-сэндвич с курицей, сэндвич с брискетом, креветки и кальмары в кляре, сырные палочки, картофель по-деревенски</div>
+      </div>
+      <div class="item-price">350 м</div>
+    </div>
+
+    <!-- СЭНДВИЧИ -->
+    <div class="anchor" id="Фаст Фуд Сэндвичи"></div>
+    <h2 class="section-title">ФАСТ-ФУД · СЭНДВИЧИ</h2>
+
+    <div class="card" data-text="клаб-сэндвич с курицей тост хлеб курица помидор яйцо салат фирменный соус">
+      <div>
+        <div class="item-name">Клаб-сэндвич с курицей</div>
+        <div class="item-desc">тост-хлеб, курица, помидор, яйцо, листья салата, фирменный соус</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+    <div class="card" data-text="брискет сэндвич тост хлеб брискет соус барбекю салат помидор фирменный соус">
+      <div>
+        <div class="item-name">Брискет-сэндвич</div>
+        <div class="item-desc">тост-хлеб, брискет, соус барбекю, листья салата, помидор, фирменный соус</div>
+      </div>
+      <div class="item-price">60 м</div>
+    </div>
+
+  </div>
+
+  <div class="footer">© GreenZone · QR-меню для гостей</div>
+
+<script>
+const searchInput = document.getElementById('search');
+const cards = document.querySelectorAll('.card');
+
+searchInput.addEventListener('input', (e)=>{
+  const q = (e.target.value || '').toLowerCase().trim();
+  cards.forEach(c=>{
+    const text = (c.dataset.text || '').toLowerCase();
+    c.style.display = text.includes(q) ? 'flex' : 'none';
+  });
+});
+
+function go(id){
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+document.querySelectorAll('.btn-cat').forEach(btn=>{
+  btn.addEventListener('click', ()=>go(btn.dataset.target));
+});
+</script>
+</body>
+</html>
